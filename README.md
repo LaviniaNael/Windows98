@@ -5,8 +5,8 @@ The project is a puzzle game that is played in a browser and is meant to have th
 
 The plot centers on the mysterious "Agent-X" and the secret "Phoenix Protocol." Players begin with what appears to be a typical desktop, but as they investigate the system, they find hints and hidden messages scattered throughout various files, including encrypted text files, a recycle bin with deleted logs, and a notepad that stores its contents locally.
 
-# Using specific passwords to open restricted areas is a vital part of the game. For example, entering the right password for a documents folder unlocks a secret folder containing more of the story, and entering a special password causes a glitch effect to appear on the background. The player finds a final message at the end of the story, which, when closed, causes a fade-to-black ending that resets the game and suggests a fresh start.
+#### sing specific passwords to open restricted areas is a vital part of the game. For example, entering the right password for a documents folder unlocks a secret folder containing more of the story, and entering a special password causes a glitch effect to appear on the background. The player finds a final message at the end of the story, which, when closed, causes a fade-to-black ending that resets the game and suggests a fresh start.
 
-# To add to the retro vibe and make the game more engaging, sound effects are used for important user actions like clicking icons and typing on the keyboard. It is a stand-alone narrative that creates a persistent world and preserves player progress through local storage until the end.
+##### To add to the retro vibe and make the game more engaging, sound effects are used for important user actions like clicking icons and typing on the keyboard. It is a stand-alone narrative that creates a persistent world and preserves player progress through local storage until the end.
 
-## I enjoyed making it thoroughly <3
+#### I enjoyed making it thoroughly <3
