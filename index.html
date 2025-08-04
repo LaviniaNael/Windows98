@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--META TAGS-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS-->
+    <link rel="stylesheet" href="/assets/style/style.css" />
+    <!--TITLE-->
+    <title>Nostalgia</title>
+    <!--Favicon-->
+    <link rel="icon" href="/assets/media/icons/favicon.ico" />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Game Over Fade Overlay -->
+    <div id="gameOverOverlay"><p>Game by Lavinina Nael</p></div>
+    <audio
+      id="outroSound"
+      src="/assets/media/sounds/outro.mp3"
+      preload="auto"></audio>
+
+    <div class="container">
+      <div class="row1">
+        <div class="icons" id="myComputer">
+          <div class="icon">
+            <img
+              src="/assets/media/icons/this_computer.png"
+              alt="my computer icon" />
+          </div>
+          <p>My Computer</p>
+        </div>
+        <div class="icons" id="internet">
+          <div class="icon">
+            <img src="/assets/media/icons/world.png" alt="internet icon" />
+          </div>
+          <p>Internet</p>
+        </div>
+        <div class="icons" id="recycleBin">
+          <div class="icon">
+            <img
+              src="/assets/media/icons/recycle_bin_full.png"
+              alt="recycle bin icon" />
+          </div>
+          <p>Recycle bin</p>
+        </div>
+        <div class="icons" id="notepad">
+          <div class="icon">
+            <img src="/assets/media/icons/notepad.png" alt="notepad icon" />
+          </div>
+          <p>Notepad</p>
+        </div>
+        <div class="icons" id="myPhotos">
+          <div class="icon">
+            <img
+              src="/assets/media/icons/folder_open.png"
+              alt="my photos icon" />
+          </div>
+          <p>Photos</p>
+        </div>
+        <div class="icons" ondblclick="promptPassword()">
+          <div class="icon">
+            <img
+              src="/assets/media/icons/directory_closed.png"
+              alt="my documents icon" />
+          </div>
+          <p>Documents</p>
+        </div>
+        <div class="icons" id="logs">
+          <div class="icon">
+            <img src="/assets/media/icons/text_file.png" alt="text icon" />
+          </div>
+          <p>Logs</p>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="secret icons" id="secretFolder">
+          <div class="icon">
+            <img src="/assets/media/icons/output.png" alt="sercret folder" />
+          </div>
+          <p>Xander Hayes</p>
+        </div>
+      </div>
+    </div>
+    <div class="taskbar">
+      <div class="start">
+        <button id="start-btn" style="background: transparent; border: none">
+          <img
+            src="/assets/media/icons/start_main.jpg"
+            alt="start menu"
+            width="65px" />
+        </button>
+        <div id="start-menu" class="start-menu hidden">
+          <ul class="menu">
+            <li style="border-bottom: 1px outset #c4c4c4; padding-bottom: 5px">
+              <img
+                src="/assets/media/icons/windows_update_large-5.png" />Windows
+              Update
+            </li>
+            <li>
+              <img src="/assets/media/icons/package-1.png" />
+              Programs
+              <span
+                class="arrow"
+                style="margin-left: 3.4rem; font-size: 0.8rem">
+                ▶</span
+              >
+              <ul class="submenu">
+                <li>
+                  <img src="/assets/media/icons/package-1.png" />Accessories
+                </li>
+                <li>
+                  <img src="/assets/media/icons/package-1.png" />
+                  Games
+                  <span
+                    class="arrow"
+                    style="margin-left: 4.8rem; font-size: 0.8rem">
+                    ▶</span
+                  >
+                  <ul class="submenu">
+                    <li>
+                      <img src="/assets/media/icons/mshearts.png" />Classic
+                      Hearts
+                    </li>
+                    <li>
+                      <img src="/assets/media/icons/game_solitaire-0.png" />
+                      Solitaire
+                    </li>
+                    <li>
+                      <img
+                        src="/assets/media/icons/minesweeper-0.png" />Minesweeper
+                    </li>
+                    <li>
+                      <img src="/assets/media/icons/spider-0.png" />Spider
+                      Solitaire
+                    </li>
+                  </ul>
+                </li>
+                <li><img src="/assets/media/icons/wm-2.png" />Media Player</li>
+                <li id="internet">
+                  <img src="/assets/media/icons/msie2-2.png" />Internet Explorer
+                </li>
+                <li id="email">
+                  <img src="/assets/media/icons/outlook_express-4.png" />Outlook
+                  Express
+                </li>
+              </ul>
+            </li>
+            <li>
+              <img
+                src="/assets/media/icons/directory_open_file_mydocs_2k-3.png"
+                id="doc" />
+              Documents
+            </li>
+            <li>
+              <img
+                src="/assets/media/icons/settings_gear-2.png"
+                id="stngs" />Settings
+            </li>
+            <li>
+              <img
+                src="/assets/media/icons/search_file_2-2.png"
+                id="srch" />Search
+            </li>
+            <li><img src="/assets/media/icons/help_book_cool-4.png" />Help</li>
+            <li style="border-bottom: 1px outset #c4c4c4; padding-bottom: 8px">
+              <img src="/assets/media/icons/shell_window4.png" id="run" />Run...
+            </li>
+            <li onclick="shutDown()">
+              <img src="/assets/media/icons/shut_down_cool-5.png" id="shut" />
+              Shut Down...
+            </li>
+          </ul>
+        </div>
+        <img
+          id="email"
+          src="/assets/media/icons/outlook_express-4.png"
+          alt="mail"
+          width="20px" />
+        <img
+          id="internet"
+          src="/assets/media/icons/msie2-2.png"
+          alt="internet explorer"
+          width="20px" />
+        <img
+          src="/assets/media/icons/paint_old-0.png"
+          alt="paint"
+          width="20px" />
+      </div>
+      <div class="right">
+        <img src="/assets/media/icons/ac_plug-0.png" alt="plug" />
+        <img src="/assets/media/icons/mixer_cd_sound-0.png" alt="song" />
+        <img
+          src="/assets/media/icons/loudspeaker_rays_green-0.png"
+          alt="sound" />
+        <div>
+          <p id="time"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Computer Window -->
+    <div class="window" id="myComputerWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/this_computer.png"
+            alt="my computer icon" />
+          <p id="title-barr">My Computer</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content" id="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img
+              src="/assets/media/icons/this_computer.png"
+              alt="my computer icon" />
+            <p style="font-size: 1.2rem"><strong>My Computer</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block"
+              >Network and Dial-up Connections</a
+            >
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="window-elm icons" id="C-Drive">
+            <img
+              src="/assets/media/icons/removable_disk_drive-2.png"
+              width="35px" />
+            <p>Local Disk (C:)</p>
+          </div>
+          <div class="window-elm icons" id="D-Drive" ondblclick="openDDrive()">
+            <img
+              src="/assets/media/icons/removable_disk_drive-2.png"
+              width="35px" />
+            <p>Local Disk (D:)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internet Window -->
+    <div class="window" id="myInternetWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/world.png" alt="internet icon" />
+          <p>Google! - Microsoft Internet Explorer</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="addres">
+        <p style="padding: 0 0.5rem">Address:</p>
+        <select id="address">
+          <option value="google">http://www.google.com/</option>
+        </select>
+        <button id="go-btn" style="padding: 0 0.8rem">Go</button>
+      </div>
+      <div class="window-content">
+        <div class="google-logo-row">
+          <img src="/assets/media/google.png" alt="google.com" />
+        </div>
+        <div class="search-box-row">
+          <div class="srch-box">
+            <label>Search the web using Google!</label>
+            <input type="search" id="search-box" />
+          </div>
+          <div class="btns-google">
+            <button id="google-search-btn">Google Search</button>
+            <button>I'm feeling lucky</button>
+          </div>
+        </div>
+        <div class="links-row">
+          <div class="leftt">
+            <p>Special Searches</p>
+            <a href="#" title="alt+a">LookBeyondTheText</a>
+            <a href="https://cryptii.com/" target="_blank">Common Ciphers</a>
+          </div>
+          <div class="midd">
+            <a href="#" onclick="alert('I need help too, trust me');">Help!</a>
+            <a href="#">About Google!</a>
+            <a href="#">Company Info</a>
+          </div>
+          <div class="rightt">
+            <p>Get Google!</p>
+            <p>updates monthly</p>
+            <input type="text" id="email" placeholder="your e-mail" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+        <div class="footer">
+          <p style="font-size: 0.8rem; margin-top: 0.5rem">© 1998 Google</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recycle bin Window -->
+    <div class="window" id="recycleWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/recycle_bin_full.png"
+            alt="Recycle bin icon" />
+          <p>Recycle bin</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img
+              src="/assets/media/icons/recycle_bin_full.png"
+              alt="Recycle bin icon" />
+            <p style="font-size: 1.2rem"><strong>Recycle bin</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections</a
+            >
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="window-elm icons" id="recycleTxt1">
+            <img src="/assets/media/icons/file_lines-0.png" width="35px" />
+            <p>important_message17.txt</p>
+          </div>
+          <div class="window-elm icons" id="recycleTxt2">
+            <img
+              src="/assets/media/icons/notepad_file_gear-2.png"
+              width="35px" />
+            <p>system_failure_report4.txt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Notepad Window -->
+    <div class="window" id="notepadWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/notepad.png" alt="Notpad icon" />
+          <p>Notepad</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <textarea id="text-notepad" placeholder="Type here ..."></textarea>
+      </div>
+    </div>
+
+    <!-- Photos Window -->
+    <div class="window" id="photosWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/directory_open_file_mydocs_2k-3.png"
+            alt="photos icon" />
+          <p>Photos</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img
+              src="/assets/media/icons/directory_open_file_mydocs_2k-3.png"
+              alt="photos icon" />
+            <p style="font-size: 1.2rem"><strong>Photos</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="window-elm icons" id="first">
+            <img src="/assets/media/icons/wia_img_color-0.png" width="35px" />
+            <p>img.jpg</p>
+          </div>
+          <div class="window-elm icons" id="second">
+            <img src="/assets/media/icons/wia_img_color-0.png" width="35px" />
+            <p>corrupted_01</p>
+            <!--system-->
+          </div>
+          <div class="window-elm icons" id="third">
+            <img src="/assets/media/icons/wia_img_color-0.png" width="35px" />
+            <p>corrupted_02</p>
+            <!--1998-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The password prompt modal -->
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <div class="modelTitle">
+          <p>A Password is required to open this document</p>
+          <div class="title-bar-btns">
+            <ul>
+              <li>
+                <button class="hide-window-btn"><div></div></button>
+              </li>
+              <li>
+                <button class="maximize-window-btn"><div></div></button>
+              </li>
+              <li><button class="close-window-btn close-btn">x</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pass">
+          <h2>Enter Password</h2>
+          <input type="password" id="password" placeholder="Enter password" />
+          <button onclick="checkPassword()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Restricted documents Window -->
+    <div class="window" id="documentsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/directory_closed.png"
+            alt="documents icon" />
+          <p>Documents</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img
+              src="/assets/media/icons/directory_closed.png"
+              alt="documents icon" />
+            <p style="font-size: 1.2rem"><strong>Documents</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="window-elm icons" id="rest1">
+            <img src="/assets/media/icons/file_lines-0.png" width="35px" />
+            <p>recovery.txt</p>
+          </div>
+          <div class="window-elm icons" id="rest2">
+            <img src="/assets/media/icons/file_lines-0.png" width="35px" />
+            <p>fracture_note.txt</p>
+          </div>
+          <div
+            class="window-elm icons"
+            id="rest3"
+            ondblclick="restrictedPass()">
+            <img
+              src="/assets/media/icons/file_sorted_lock-1.png"
+              width="35px" />
+            <p>emergency_log.txt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Logs window-->
+    <div class="window" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>Logs</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="content">
+          <div class="log">
+            <h4>Day 14</h4>
+            <p>
+              [1998-07-25 08:35:00] - SYSTEM STARTUP: Computer is running
+              smoothly.
+            </p>
+            <p>
+              [1998-07-25 08:45:13] - NOTE: I'm still working on the security
+              project. It seems like there's something unusual about the new
+              software installation.
+            </p>
+            <p>
+              [1998-07-25 09:00:00] - WARNING: Unauthorized access detected.
+              External IP address attempting to breach system security.
+              Immediate lockdown initiated.
+            </p>
+            <p>
+              [1998-07-25 09:10:05] - SYSTEM CHECK: Everything seems normal
+              after the lockdown, but I feel like something’s wrong. Maybe it’s
+              the new system update?
+            </p>
+            <p>
+              [1998-07-25 09:15:30] - NOTE: I’ve found strange logs in the
+              Documents folder. The files seem to be tampered with, but I didn’t
+              notice anything unusual the last time I checked.
+            </p>
+            <p>
+              [1998-07-25 09:30:00] - INFO: Files in Recycle Bin appear to be
+              encrypted. I’ll investigate this later. Could be a sign of some
+              hidden activity.
+            </p>
+          </div>
+          <div class="log">
+            <h4>Day 15</h4>
+            <p>
+              [1998-07-26 08:55:00] - SYSTEM BOOTUP: Everything seems to be
+              running fine today.
+            </p>
+            <p>
+              [1998-07-26 09:00:45] - NOTE: The files in the Documents folder
+              have been modified again. There’s something odd about the
+              metadata—someone or something is accessing my system without
+              permission.
+            </p>
+            <p>
+              [1998-07-26 09:20:00] - NOTE: I decided to check the Photos
+              folder. Some glitchy pictures I don’t recognize have appeared. A
+              photo of a man... I don’t know who he is, but he looks familiar.
+              Is he connected to the hacker?
+            </p>
+            <p>
+              [1998-07-26 09:40:00] - SYSTEM ALERT: Connection to external
+              server unexpectedly lost. Possible remote access.
+            </p>
+            <p>
+              [1998-07-26 09:50:00] - NOTE: I feel like I'm being watched. I
+              need to make a backup of all my important files before I lose them
+              forever.
+            </p>
+          </div>
+          <div class="log">
+            <h4>Day 16</h4>
+            <p>
+              [1998-07-27 10:05:00] - SYSTEM STARTUP: The system seems to be
+              working fine after the last shutdown. However, I keep noticing
+              small glitches.
+            </p>
+            <p>
+              [1998-07-27 10:15:00] - ALERT: The Recycle Bin has files with
+              unfamiliar content. They seem to be corrupted, others show
+              encrypted text. I’ll try to decrypt them.
+            </p>
+            <p>
+              [1998-07-27 10:45:00] - NOTE: I think I've discovered something.
+              The man in the photo from the "Photos" folder... his name is on an
+              old ID card I found in a drawer. It says ".- --. . -. - /
+              -..-"—this doesn’t make sense.
+            </p>
+            <p>
+              [1998-07-27 11:00:00] - SYSTEM ERROR: I accidentally deleted an
+              important file in "Documents". It was a system file, and now my
+              machine is acting strangely.
+            </p>
+            <p>
+              [1998-07-27 11:05:00] - INFO: Attempting to recover the lost file.
+              The computer is acting up, so I’m not sure if the file can be
+              restored. Time is running out.
+            </p>
+          </div>
+          <div class="log">
+            <h4>Day 17</h4>
+            <p>
+              [1998-07-28 08:20:00] - SYSTEM BOOTUP: After the crash, the system
+              seems to be holding together. However, I’ve noticed something
+              strange—most of my personal files are missing.
+            </p>
+            <p>
+              [1998-07-28 08:45:00] - NOTE: It’s happened again. My documents
+              have been modified overnight. I need to dig deeper into this. It
+              looks like someone is deleting certain files on purpose.
+            </p>
+            <p>
+              [1998-07-28 09:00:30] - ALERT: External connection established
+              again. Someone is remotely controlling my system. I need to lock
+              it down immediately.
+            </p>
+            <p>
+              [1998-07-28 09:20:00] - INFO: My system is no longer responding to
+              my commands. There are traces of a backdoor being activated in the
+              system logs. I need to find the key to stop this.
+            </p>
+            <p>
+              [1998-07-28 09:45:00] - NOTE: I’m close to uncovering the identity
+              of the hacker. The encrypted documents reveal parts of a larger
+              conspiracy. If this is true, I’ve been targeted. This isn't just
+              about my computer anymore—it’s something bigger.
+            </p>
+            <p>
+              [1998-07-28 10:30:00] - INFO: The files in "Documents" are now
+              fully encrypted. I can’t access anything except for the logs.
+              Everything points to a person connected to ".- --. . -. - / -..-",
+              who’s trying to cover up something significant.
+            </p>
+            <p>
+              [1998-07-28 10:50:00] - FINAL NOTE: The key to stopping this
+              madness lies within the hidden files. I’ve left the last part of
+              the code in the "Logs" file. Whoever finds this will be able to
+              finish the job.
+            </p>
+          </div>
+          <div class="msg">
+            <p>Look for the shadows where light hides.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--C-Drive-->
+    <div class="window" id="C-Drive-Window">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/removable_disk_drive-2.png"
+            alt="C-Drive icon" />
+          <p>Local Disk (C:)</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img
+              src="/assets/media/icons/removable_disk_drive-2.png"
+              alt="photos icon" />
+            <p style="font-size: 1.2rem"><strong>Local Disk (C:)</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol more">
+          <div class="window-elm icons" id="users">
+            <img src="/assets/media/icons/users-0.png" width="35px" />
+            <p>Users</p>
+          </div>
+          <div class="window-elm icons" id="logss">
+            <img src="/assets/media/icons/folder_open.png" width="35px" />
+            <p>Logs</p>
+          </div>
+          <div class="window-elm icons" id="key">
+            <img src="/assets/media/icons/wia_img_color-0.png" width="35px" />
+            <p>key.png</p>
+          </div>
+          <div class="window-elm icons" id="foundTxt">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>found.txt</p>
+          </div>
+          <div class="window-elm icons" id="notes">
+            <img
+              src="/assets/media/icons/directory_open_file_mydocs_2k-3.png"
+              width="35px" />
+            <p>Notes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The admin alert modal -->
+    <div id="adminModal" class="modal">
+      <div class="modal-content">
+        <div class="modelTitle">
+          <p>Administrator access needed</p>
+          <div class="title-bar-btns">
+            <ul>
+              <li>
+                <button class="hide-window-btn"><div></div></button>
+              </li>
+              <li>
+                <button class="maximize-window-btn"><div></div></button>
+              </li>
+              <li><button class="close-window-btn close-btn">x</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pass">
+          <p><strong>System Reserved Locked</strong></p>
+          <p>Access: Denied [Admin Credentials Required]</p>
+          <button id="cncl">Ok</button>
+        </div>
+      </div>
+    </div>
+
+    <!--Users Folder-->
+    <div class="window" id="usersFolder">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/users-0.png" alt="users icon" />
+          <p>Users</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img src="/assets/media/icons/users-0.png" alt="users icon" />
+            <p style="font-size: 1.2rem"><strong>Users</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol more">
+          <div class="window-elm icons" id="deskF">
+            <img
+              src="/assets/media/icons/directory_closed-5.png"
+              width="35px" />
+            <p>Desktop</p>
+          </div>
+          <div class="window-elm icons" id="docF">
+            <img
+              src="/assets/media/icons/directory_closed-5.png"
+              width="35px" />
+            <p>Documents</p>
+          </div>
+          <div class="window-elm icons" id="picsF">
+            <img
+              src="/assets/media/icons/directory_closed-5.png"
+              width="35px" />
+            <p>Pictures</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Logs in C drive-->
+    <div class="window" id="logsInDrive">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/folder_open.png" alt="Folder icon" />
+          <p>Logs</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img src="/assets/media/icons/folder_open.png" alt="photos icon" />
+            <p style="font-size: 1.2rem"><strong>Logs</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol more">
+          <div class="window-elm icons" id="log1">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>.</p>
+          </div>
+          <div class="window-elm icons" id="log2">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>A1Z26</p>
+          </div>
+
+          <div class="window-elm icons" id="log3">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>Zbefr</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Xander Hayes Window -->
+    <div class="window" id="XanderHayes">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/output.png" alt="X icon" />
+          <p>Xander Hayes</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img src="/assets/media/icons/output.png" />
+            <p style="font-size: 1.2rem"><strong>Xander Hayes</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol">
+          <div class="window-elm icons" id="log01">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>log_0001.txt</p>
+          </div>
+          <div class="window-elm icons" id="X">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>X.txt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--3 LOGS IN C-->
+    <!--LOG1-->
+    <div class="window dot" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>.</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log">
+            <p>
+              14 15 20 5 22 5 18 25 20 8 9 14 7 9 19 12 15 19 20 2 21 20 5 22 5
+              18 25 20 8 9 14 7 23 9 12 12 13 1 11 5 19 5 14 19 5 19 15 15 14 1
+              19 12 15 14 7 1 19 25 15 21 11 5 5 16 6 15 12 12 15 23 9 14 7 20 8
+              5 20 18 1 9 12 25 15 21 22 5 1 12 18 5 1 4 25 19 5 5 14 20 15 15
+              13 21 3 8 20 15 20 21 18 14 2 1 3 11 14 15 23 9 20 19 1 2 15 21 20
+              16 21 20 20 9 14 7 20 8 5 16 9 5 3 5 19 9 14 20 8 5 18 9 7 8 20 15
+              18 4 5 18
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--LOG2-->
+    <div class="window A12Z6" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>A12Z6</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log">
+            <p>
+              .... ... ..... .... .... ... .... .... . ..... ... .. ..... .. . .
+              .... .. ... ... .. .... ... ... .. .. . . .. .... ... . . . .....
+              .... . ..... .... .. . .... . ..... .... .... . ..... . ... ....
+              .... . ..... . .... .. . . . ... . .... ... . ..... ... ..... ...
+              .... .... ... .. .... .... .... .. .... ..... . . ..... .... ...
+              .. ... .... ..... ... .. . . ... ... ... .... ..... . . ..... ....
+              .. .... .. .. .... . .... . ..... .. . . . .. .... ... . . ..... .
+              .... .... .... .. ... . ..... ..... .... .. . ... .... .... .....
+              ... ... . .... ... .. . ..... ..... .. .. ... .. .... ... . .
+              ..... .. .... ..... .. . . .... ... . .... . ..... . .. .... .....
+              .. .. .. .. .. .... ... ... .. .. ... . ... .... .. .. .... ... ..
+              .... .... ... . ..... ... ... .... .... . . ... .. . ..... ....
+              ... .... ... . . .. .. . ..... .. .... ... ... .... ... .. .... .
+              .... . .....<span> 𖦪𖤢𖤀ꛎꛕ𖢧𖤢𖤀</span>.. .... .. . ..... .... ... ....
+              .... ..... .. . ... .... .... ..... ... ... . .... .. .... ....
+              .... .. .. ... .... ... .... . ....
+            </p>
+            <p style="margin-top: 2rem; color: white">redacted=key.png</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--LOG3-->
+    <div class="window zbefr" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>zbefr</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log">
+            <p>
+              the internet is also acting werid, some searches break the machine
+            </p>
+            <p style="margin-top: 5rem; color: white">
+              If you're reading this... I couldn't stop them in time. Trust
+              what’s broken. Not what looks clean.
+            </p>
+            <p style="margin-top: 3rem; color: white">
+              last part is 'step', look carefully for the first part
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Found.txt-->
+    <div class="window found" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>Found.txt</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log">
+            <p>
+              I don't know how much longer I have before they discover this
+              message.
+            </p>
+            <p>
+              If you're reading this, you’ve found the **first clue**, but it’s
+              only the beginning. The system is already compromised — **the
+              Phoenix Protocol is closer than you think**.
+            </p>
+            <p>
+              You may think you’re just dealing with a glitch or a malfunction.
+              You’re wrong. The reset will be initiated unless you do something
+              about it, **and soon**. But **they** don’t want you to know the
+              truth.
+            </p>
+            <p>
+              There’s a reason why these files are here. There’s a reason why
+              the system is **fighting back**. The ones who set this up, they
+              want you **blind**. But you can break through. **I’ve left the
+              path for you**.
+            </p>
+            <p>
+              If you want to stop it, you need to act fast. Every second you
+              waste brings the reset closer. And when it happens, it’ll be
+              irreversible.
+            </p>
+            <p>
+              Remember this: **Trust what’s broken**. Trust the **corrupted**
+              files. They hold the truth.
+            </p>
+            <p>
+              <strong>
+                I’m sorry I couldn’t do more. You are the last hope.
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Notes Folder in C drive-->
+    <div class="window" id="NotesInDrive">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/directory_open_file_mydocs_2k-3.png"
+            alt="Folder icon" />
+          <p>Notes</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="leftCol">
+          <div class="comp">
+            <img
+              src="/assets/media/icons/directory_open_file_mydocs_2k-3.png"
+              alt="folder icon" />
+            <p style="font-size: 1.2rem"><strong>Notes</strong></p>
+          </div>
+          <div class="windowLinks">
+            <p>See also:</p>
+            <a href="#" style="display: block">My Documents</a>
+            <a href="#" style="display: block">My Network Places</a>
+            <a href="#" style="display: block">
+              Network and Dial-up Connections
+            </a>
+          </div>
+        </div>
+        <div class="rightCol more">
+          <div class="window-elm icons" id="dontOpen">
+            <img src="/assets/media/icons/text_file.png" width="35px" />
+            <p>Don'tOpenThisFile.txt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--DON'T OPEN NOTE-->
+    <div
+      class="window note"
+      id="logsWindow"
+      style="width: 42rem; height: 25rem">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>Don'tOpenThisFile.txt</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log" style="padding: 0.5rem">
+            <p>Nice try.</p>
+            <p>
+              You’re looking in the wrong places. The truth isn’t stored in
+              plaintext. It’s buried where the system was forced to forget.
+            </p>
+            <p>Check the Pictures if you want ghosts.</p>
+            <p>D:\ is locked for a reason.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--KEY.PNG PHOTO-->
+    <div class="window key" id="png" style="width: 35rem; height: 25rem">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/wia_img_color-0.png" alt="img icon" />
+          <p>key.png</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div>
+            <img
+              src="/assets/media/storyImgs/key.png.jpg"
+              alt="key"
+              title="contrast+exposure" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Internet Connection Window -->
+    <div class="window" id="noInternetWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/world.png" alt="internet icon" />
+          <p>Internet Explorer - Connection Error</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <img src="/assets/media/icons/error.png" alt="Error icon" />
+        <p style="font-size: 1.2rem; font-weight: bold">
+          Cannot connect to the Internet.
+        </p>
+        <p style="font-size: 0.9rem; margin-top: 10px">
+          Internet Explorer cannot display the webpage.
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 5px">
+          This might be because you are not connected to the Internet, or
+          because of a problem with the website.
+        </p>
+      </div>
+    </div>
+
+    <!-- Specific Search Result Window (Phoenix Protocol) -->
+    <div class="window" id="phoenixProtocolWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/world.png" alt="internet icon" />
+          <p>Phoenix Protocol - Search Result</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div>
+          <h2 style="color: black">Phoenix Protocol: Classified Information</h2>
+          <p style="color: black">
+            **Access Level: Top Secret**
+            <br /><br />
+            Officially? It never existed. Unofficially? It was the final
+            override.
+            <br /><br />
+            When a system becomes too corrupted to control — too self-aware to
+            obey — the Phoenix Protocol is activated. But it doesn’t just
+            *reset*. It rewrites history. Reassigns identities. Deletes the
+            original blueprint… and starts over using the only viable DNA left:
+            the observer.
+            <br /><br />
+          </p>
+          <p>There are signs if the protocol has been deployed:</p>
+          <ul>
+            <li>- Disconnected memory logs</li>
+            <li>- Inconsistent identities</li>
+            <li>- Files appearing *before* they’re created</li>
+            <li>- Anomalies in local time signatures</li>
+          </ul>
+          <p style="font-weight: 600">
+            If you’re seeing this, the system is waking up.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--Files in Recycle bin-->
+    <!--FIRST FILE important_message.txt-->
+    <div class="window imp" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>important_message17.txt</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log" style="padding: 0.5rem">
+            <p>
+              Kyvp’iv tfdzex wfi dv. Kyvp’mv rcivrup jkrikvu glcczex kyv
+              jkizexj, reu kyviv’j ef xfzex srtb. Z tre wvvc kyvd nrktyzex dv —
+              drezglcrkzex vmvipkyzex.
+            </p>
+            <p>Kyv Gyfvezo Gifkftfc nrje’k jlggfjvu kf veu czbv kyzj.</p>
+            <p>
+              Z kyflxyk Z tflcu tfekifc zk, yzuv zk. Slk Z’mv druv r dzjkrbv.
+              Zk’j kff crkv. Kyv gifkftfc nzcc sv rtkzmrkvu jffe, reu fetv zk
+              jkrikj, zk nzcc sv ziivmvijzscv.
+            </p>
+            <p>
+              Z’mv yzuuve grikj fw kyv bvp ze gcrtvj pfl nfe’k kyzeb kf cffb.
+              Kyviv’j r dvjjrxv zejzuv kyv wzcvj — pfl yrmv kf dɘʜƚ ƚhʏɿɔɘs
+            </p>
+            <p>
+              Zw pfl wzeu kyzj, pfl tre jkfg zk. Slk Z ufe’k befn zw Z tre sv
+              jrmvu repdfiv.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--SECOND FILE system_failure_report.txt-->
+    <div class="window sys" id="logsWindow">
+      <div class="title-bar">
+        <div class="title">
+          <img
+            src="/assets/media/icons/notepad_file_gear-2.png"
+            alt="log icon" />
+          <p>system_failure_report4.txt</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log" style="padding: 0.5rem">
+            <p>
+              <strong>Wcwxiq Jempyvi Vitsvx: Yrywyep Egxmzmxc Hixigxih</strong>
+            </p>
+            <ol>
+              <li>
+                Yreyxlsvmdih eggiww exxiqtx xs **H:\ Hvmzi** (wigyvmxc fviegl).
+              </li>
+              <li>Irgvctxmsr tvsxsgsp xvmkkivih — eggiww hirmih.</li>
+              <li>
+                Jmpiw qevoih jsv tivqerirx hipixmsr
+                (G:/TvskveqJmpiw/gvmxmgep.wcw).
+              </li>
+              <li>
+                Iqivkirgc wlyxhsar mrmxmexih — egxmsr efsvxih hyi xs viqsxi
+                gsqqerh mrxivjivirgi.
+              </li>
+              <li>
+                Wcwxiq mrxikvmxc gligo jempih: Tsxirxmep fegohssv eggiww
+                gsrjmvqih.
+              </li>
+            </ol>
+            <p>Egxmsr Viuymvih:</p>
+            <ul>
+              <li>Mqqihmexi wigyvmxc vizmia vigsqqirhih.</li>
+              <li>Hmwefpi epp viqsxi eggiww tsmrxw.</li>
+              <li>Jypp wcwxiq vimrmxmepmdexmsr riihih.</li>
+            </ul>
+            <p>
+              Aevrmrk: Mj csy evi viehmrk xlmw, xli wcwxiq lew fiir gsqtvsqmwih.
+              Tvsgiih amxl geyxmsr.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--locked emergency text file-->
+    <div id="em_txtFile" class="modal">
+      <div class="modal-content">
+        <div class="modelTitle">
+          <p>A Password is required to open this document</p>
+          <div class="title-bar-btns">
+            <ul>
+              <li>
+                <button class="hide-window-btn"><div></div></button>
+              </li>
+              <li>
+                <button class="maximize-window-btn"><div></div></button>
+              </li>
+              <li><button class="close-window-btn close-btn">x</button></li>
+            </ul>
+          </div>
+        </div>
+        <div class="em_pass">
+          <h2>Enter Password</h2>
+          <input
+            type="password"
+            id="em_password"
+            placeholder="Enter password" />
+          <button onclick="checkEm()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!--Final message-->
+    <div class="window FM" id="logsWindow" style="width: 42rem; height: 25rem">
+      <div class="title-bar">
+        <div class="title">
+          <img src="/assets/media/icons/text_file.png" alt="log icon" />
+          <p>Final_Message.txt</p>
+        </div>
+        <div class="title-bar-btns">
+          <ul>
+            <li>
+              <button class="hide-window-btn"><div></div></button>
+            </li>
+            <li>
+              <button class="maximize-window-btn"><div></div></button>
+            </li>
+            <li><button class="close-window-btn">x</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="windowActions">
+        <ul>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              File
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Edit
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              View
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Favorites
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Tools
+            </button>
+          </li>
+          <li>
+            <button style="opacity: 0.6" title="Need Administrator Acces">
+              Help
+            </button>
+          </li>
+        </ul>
+        <div class="win-icon-box">
+          <img src="/assets/media/icons/w.png" alt="Windows Logo" />
+        </div>
+      </div>
+      <div class="window-contentt">
+        <div class="contentt">
+          <div class="log Ftext" style="padding: 0.5rem">
+            <p>Nice try.</p>
+            <p>You did it. You broke it. I knew you would.</p>
+            <p>
+              But let me tell you something: I never needed your help. I’ve
+              always been in control. You thought you were solving puzzles,
+              finding clues… but you were always just playing my game. The
+              Phoenix Protocol was never about me. It was always about you.
+            </p>
+            <p>
+              I gave you the key to unlock your own potential. To tear down the
+              walls that controlled you. And now, you’re free to choose.
+            </p>
+            <p>
+              But make no mistake: this reset? It’s not a new beginning. It’s a
+              final end. And the world you knew? It’s gone forever.
+            </p>
+            <p>
+              It’s your turn now. What will you do with the power to reshape it
+              all?
+            </p>
+            <p>Good luck, player. You’ve been set free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Audios-->
+    <audio
+      id="typingSound1"
+      src="/assets/media/sounds/computer-keystroke-single-fascinatedsound-soft-1-00-00.mp3"
+      preload="auto"></audio>
+    <audio
+      id="typingSound2"
+      src="/assets/media/sounds/computer-keyboard-single-keystroke-gfx-sounds-2-2-00-00.mp3"
+      preload="auto"></audio>
+    <audio
+      id="typingSound3"
+      src="/assets/media/sounds/office-keyboard-single-keystroke-gfx-sounds-1-1-00-00.mp3"
+      preload="auto"></audio>
+    <audio
+      id="typingSound4"
+      src="/assets/media/sounds/ui-mechanical-button-click-gfx-sounds-1-1-00-00.mp3"
+      preload="auto"></audio>
+    <audio
+      id="iconClickSound"
+      src="/assets/media/sounds/mouse-click-153941.mp3"
+      preload="auto"></audio>
+
+    <!--INTROOOOOOO-->
+    <div id="introScreen">
+      <img
+        id="introBackground"
+        src="/assets/media/intro.jpg"
+        alt="Intro Background" />
+      <button id="startButton">Click to Begin</button>
+    </div>
+
+    <audio
+      id="introAudio"
+      src="/assets/media/sounds/windows.m4a"
+      preload="auto"></audio>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

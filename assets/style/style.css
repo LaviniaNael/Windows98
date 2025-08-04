@@ -1,0 +1,700 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: serif;
+}
+
+a {
+  color: blue;
+  margin: 0.2rem 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 60rem;
+  width: 100%;
+  height: 94%;
+  color: white;
+  font-size: 0.7rem;
+  text-align: center;
+  padding-top: 5px;
+  background: url(/assets/media/bg.jpg);
+}
+.row2 {
+  margin-top: 20rem;
+  width: fit-content;
+}
+.secret {
+  display: none;
+}
+.icon img {
+  width: 45px;
+}
+
+.icons {
+  margin: 0 1.5rem;
+  padding: 0.6rem 0.4rem;
+  width: 5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.icons:hover {
+  background-color: #d3d3d369;
+}
+
+/*TASKBAR */
+.taskbar {
+  height: 6%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d3d3d3;
+  padding: 0 1.5rem;
+}
+
+.start,
+.right {
+  border: 4px ridge #e4e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #c0c0c0;
+  height: 100%;
+}
+
+.start img {
+  margin: 0 0.3rem;
+  cursor: pointer;
+}
+
+.right img {
+  width: 20px;
+  margin: 0 0.4rem;
+  cursor: pointer;
+}
+
+#start-btn {
+  margin-top: 0.2rem;
+}
+
+.start-menu {
+  position: fixed;
+  bottom: 40px;
+  left: 5px;
+  width: 200px;
+  background-color: #c0c0c0;
+  border: 2px outset white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu img {
+  margin-right: 0.8rem;
+}
+
+.menu,
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 2px outset white;
+}
+
+.menu > li,
+.submenu > li {
+  padding: 8px;
+  background-color: #c0c0c0;
+  position: relative;
+  color: black;
+  cursor: pointer;
+}
+
+.menu > li:hover,
+.submenu > li:hover {
+  background-color: #000080;
+  color: white;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 180px;
+  border-left: 2px solid gray;
+  font-size: 0.9rem;
+}
+
+.submenu img {
+  width: 1.1rem;
+  height: 1rem;
+  margin-right: 0.8rem;
+}
+
+li:hover > .submenu {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu li {
+  display: flex;
+}
+
+li img {
+  width: 35px;
+}
+
+#stngs,
+#srch,
+#shut,
+#run {
+  width: 40px;
+}
+
+#doc {
+  width: 30px;
+}
+
+#time {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0.4rem;
+  padding: 0;
+}
+
+/*icons and windows*/
+.window {
+  position: absolute;
+  top: 5rem;
+  left: 15rem;
+  width: 40rem;
+  height: 25rem;
+  background: #ffffff;
+  border: 4px ridge #d3d3d3;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 1px;
+}
+
+.title img {
+  width: 22px;
+  margin-right: 8px;
+}
+
+.title-bar {
+  background: linear-gradient(to right, #000080, #0000ffa8, #39bfe7);
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.title-bar-btns ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.title-bar-btns .close-window-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.windowActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dfdede;
+  height: auto;
+}
+
+.windowActions ul {
+  list-style: none;
+  display: flex;
+  border: 2px ridge #d3d3d3;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.windowActions button {
+  border: none;
+  padding: 0.4rem;
+  background-color: transparent;
+  cursor: auto;
+  transition: all 200ms ease;
+  font-size: 0.8rem;
+}
+
+.win-icon-box {
+  display: inline-block;
+  padding: 4px 0;
+  border: 2px ridge #d3d3d3;
+}
+
+.win-icon-box img {
+  width: 1.6rem;
+  display: block;
+}
+
+.title-bar-btns button {
+  width: 1.1rem;
+  height: 1.1rem;
+  font-weight: 600;
+  margin: 0 1px;
+  font-size: 1rem;
+}
+
+.title-bar-btns .maximize-window-btn div {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: transparent;
+  margin: 0 2px;
+  border: 2px solid black;
+  font-weight: 400;
+}
+
+.title-bar-btns .hide-window-btn div {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: transparent;
+  margin: 0 2px;
+  border-bottom: 2px solid black;
+}
+
+.window-content {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.window-content .leftCol {
+  display: grid;
+  grid-template-rows: 90px 100px;
+}
+
+.leftCol .comp {
+  border-bottom: 2px solid #39bfe7;
+}
+
+.leftCol .comp p {
+  margin: 5px 0 0 10px;
+  display: flex;
+}
+
+.leftCol .windowLinks {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: row;
+}
+
+.more {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.rightCol .window-elm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  width: 110px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+#myInternetWindow {
+  width: 45rem;
+  height: 30rem;
+}
+
+.addres {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #dfdede;
+  border: 2px ridge #e6e4e4;
+}
+
+#address {
+  width: 100%;
+  height: 100%;
+}
+
+#myInternetWindow .window-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.google-logo-row img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.srch-box {
+  margin-bottom: 10px;
+}
+
+.srch-box label {
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+
+#search-box {
+  width: 100%;
+  padding: 0 0.5rem;
+  font-size: 16px;
+  border: 2px ridge #dcdcdc;
+}
+
+.search-box-row {
+  background-color: #e6e6e6;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0 1rem;
+}
+
+.search-box-row button {
+  padding: 0.3rem 2rem;
+  background-color: #cccccc;
+  border: 2px outset #b4b4b4;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.search-box-row button:hover {
+  background-color: #b4b3b3;
+}
+
+.btns-google {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.links-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #31ccccb7;
+  height: max-content;
+  width: 100%;
+}
+
+.leftt,
+.midd,
+.rightt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.leftt a,
+.midd a {
+  padding-bottom: 8%;
+}
+
+.rightt button {
+  margin-top: 15px;
+  padding: 0.3rem 1rem;
+  border: 2px outset #e4e3e3;
+  background-color: #d3d3d3;
+  box-shadow: 0 2px 5px #252525;
+  transition: all 200ms ease;
+}
+
+.rightt button:hover {
+  background-color: #b3b2b2;
+}
+
+.rightt input::placeholder {
+  text-align: center;
+}
+
+.rightt input {
+  padding: 0.2rem 0;
+  border: 2px inset #9b9999;
+}
+
+/* Modal for password input */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modelTitle {
+  background: linear-gradient(to right, #000080, #0000ffa8, #39bfe7);
+  padding: 0.4rem;
+  color: white;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.modal-content {
+  background-color: #c0c0c0;
+  text-align: center;
+  width: 30rem;
+  height: 10rem;
+  border: 4px outset #d3d3d3;
+}
+
+.pass,
+.em_pass {
+  padding: 20px;
+}
+
+.modal-content input[type="password"] {
+  padding: 5px 10px;
+  margin: 10px 0;
+  font-size: 0.9rem;
+  border: 2px inset #818181;
+}
+
+.modal-content .pass button,
+.modal-content .em_pass button {
+  padding: 5px 30px;
+  background-color: #dddcdc;
+  border: 2px outset #818181;
+  color: black;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.modal-content .pass button:hover,
+.modal-content .em_pass button:hover {
+  background-color: #cacaca;
+}
+
+.window-contentt {
+  height: calc(100% - 40px);
+}
+
+#notepadWindow .window-contentt #text-notepad {
+  resize: none;
+  outline: none;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.4;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  padding: 0 0.4rem;
+}
+
+#logsWindow {
+  height: 30rem;
+  width: 50rem;
+}
+.dot .window-contentt .log,
+.A12Z6 .window-contentt .log,
+.zbefr .window-contentt .log,
+.found .window-contentt .log {
+  width: 48rem;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+.A12Z6 .log span {
+  white-space: wrap;
+  background-color: black;
+  color: black;
+}
+.A12Z6 .log {
+  font-weight: 600 !important;
+}
+.found .log,
+.note .log,
+.imp .log,
+.sys .log {
+  line-height: 2rem;
+}
+.sys .window-contentt .log {
+  margin-left: 1rem;
+}
+
+.content {
+  overflow: scroll;
+  height: calc(100% - 40px);
+  white-space: nowrap;
+  padding: 2px 8px;
+}
+
+.content p,
+.content h4 {
+  margin: 8px 0;
+}
+
+.msg {
+  margin: 15px 0;
+  color: white;
+}
+.key .window-contentt img {
+  width: 34.5rem;
+  height: 20.5rem;
+}
+#noInternetWindow .window-contentt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#noInternetWindow .window-contentt img {
+  margin-bottom: 15px;
+  width: 30px;
+}
+#noInternetWindow .window-contentt p {
+  color: black;
+}
+#phoenixProtocolWindow {
+  width: 48rem;
+  height: 30rem;
+  background-color: #b6d9fac9;
+}
+#phoenixProtocolWindow .window-contentt div {
+  overflow: auto;
+  margin: 0.5rem;
+}
+
+#phoenixProtocolWindow .window-contentt p {
+  line-height: 1.3rem;
+}
+
+.window-contentt ul {
+  margin-bottom: 1rem;
+}
+
+.window-content-photo {
+  height: calc(100% - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  background-color: #f0f0f0;
+}
+
+.window-content-photo img {
+  width: 35rem;
+  height: 20rem;
+  object-fit: contain;
+  display: block;
+}
+
+.window-content-text {
+  height: calc(100% - 70px);
+  padding: 0.5rem;
+  overflow: auto;
+  background-color: #ffffff;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.window-content-text pre {
+  margin: 0;
+  white-space: pre;
+}
+
+#gameOverOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 5s ease-in-out;
+  z-index: 9999;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+#introScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000001;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+#introBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#introScreen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#startButton {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #d7dee6;
+  color: black;
+  border: 2px outset #ffffffad;
+  cursor: pointer;
+  z-index: 10001;
+}
